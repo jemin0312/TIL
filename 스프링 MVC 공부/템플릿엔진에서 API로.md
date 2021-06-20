@@ -23,7 +23,7 @@ public class ApiController{}
 
 > json을 통해 값을 받을 때 특정한 필드값은 null 허용하지 않으려면
 매개변수에 @Valid, 필드값에 @NotEmpty를 붙여주면 된다.
-❗ @NotEmpty는 validation이라는 dependencies를 추가해야 사용 가능하다. 
+- ❗ @NotEmpty는 validation이라는 dependencies를 추가해야 사용 가능하다. 
 
 
 
