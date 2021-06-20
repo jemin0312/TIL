@@ -6,6 +6,7 @@
 - ### 깃, 깃허브 공부
   - [깃 명렁어 모음](https://github.com/jemin0312/TIL/blob/main/Git%2CGithub%20%EA%B3%B5%EB%B6%80/%EA%B9%83%20%EC%82%AC%EC%9A%A9%EB%B2%95.md)
 - ### JPA 공부 
+  - [영속성 컨텍스트](https://github.com/jemin0312/TIL/blob/main/JPA%20%EA%B3%B5%EB%B6%80/%EC%98%81%EC%86%8D%EC%84%B1%20%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8.md)
 - ### Spring MVC 공부 
 - ### 웹 기본지식 공부 
 - ### Java 문법 공부 
