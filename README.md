@@ -18,5 +18,5 @@
   - [덩어리 웹 기본지식 정리할 예정!](https://github.com/jemin0312/TIL/blob/main/%EC%9B%B9%20%EA%B8%B0%EB%B3%B8%EC%A7%80%EC%8B%9D/%EB%8D%A9%EC%96%B4%EB%A6%AC%20%EC%9B%B9%20%EA%B8%B0%EB%B3%B8%EC%A7%80%EC%8B%9D.md)
 - ### Java 문법 공부 
 
-- ### [스프링 어노테이션 정리](https://github.com/jemin0312/TIL/tree/main/Annotation)
+- [스프링 어노테이션 정리](https://github.com/jemin0312/TIL/tree/main/Annotation)
 
