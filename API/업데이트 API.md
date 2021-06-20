@@ -16,4 +16,12 @@ public void update(Long id, String name)
 ```
 > 트렌젝션이 끝날때 알아서 변경감지(더티체킹)이 되므로 업데이트가 정상 실행된다. 
 
-
+```java
+ public UpdateResponseDTO updateCat(@PathVariable Long catId, @RequestBody UpdateRequestDTO updateRequestDTO)
+    {
+        catRepository.update(catId, updateRequestDTO.getName());
+        Cat cat = catRepository.findOne(catId);
+        return new UpdateResponseDTO(cat.getName);
+        
+    }
+```
