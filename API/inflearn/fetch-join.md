@@ -43,3 +43,5 @@ select
         delivery delivery2_ 
 ```
 > 처음의 select문 한방에 fetch join한 모든 엔티티들을 같이 땡겨왔다. 이때는 1번만 쿼리를 쏘면 된다. 
+---
+> 만약 fetch join만으로 땡기면 api 스펙에 필요하지 않는 필드들까지 다 땡긴다. 더 최적화를 할 수도 있을까?
