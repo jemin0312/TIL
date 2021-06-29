@@ -1,5 +1,6 @@
 ### 벌크성 수정 쿼리
 
+
 ```java
 @Modifying 이 무조건 붙어 있어야 기존의 select 처럼 resultList나 singleResult가 안나온다 즉 executeUpdate로 나온다.
 @Query("update Member m set m.age = m.age + 1 where m.age >= :age")
