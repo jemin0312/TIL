@@ -32,7 +32,7 @@ python manage.py createsuperuser   // 관리자를 만드는 명령어
 ```
 ![](https://images.velog.io/images/jemin0312/post/08b1ee9f-9a4d-4f15-b086-d8e92a3fbe6b/%EC%BA%A1%EC%B2%98.PNG)
 
-자! 이제 어드민 경로에 접속할수 있다. 
+- 자! 이제 어드민 경로에 접속할수 있다. 
 ![](https://images.velog.io/images/jemin0312/post/e535e908-a541-435f-81ab-4bbf66bf23f5/%EC%BA%A1%EC%B2%982.PNG)
 - admin.py에 해당 내용을 추가 해줘야한다. 여기서 Blog는 추가한 객체이다
 ```python
