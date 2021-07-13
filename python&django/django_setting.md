@@ -41,3 +41,11 @@ INSTALLED_APPS = [
     'account'
 ```
 
+> 경로를 추가해주고 싶을때는 urls.py에 등록을 해줘야한다. 
+
+```python
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.home , name='home'),
+]
+```
