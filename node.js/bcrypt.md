@@ -17,3 +17,8 @@ hashSync의 매개변수 중 2번째 인자는 salt의 자릿수를 의미한다
 $2b$ : 사용한 알고리즘, 10$ : salt의 자릿수, lRjST5kIbz : salt, 3tpDD/GOVTme.Z.U1ED0ikPK64Wl3WUlLY6MD5C6M9u : hash
 ```
 ❗ salt의 길이를 늘릴수록 hashing에 필요한 시간은 기하급수적으로 증가한다. 적당한 길이를 설정해야한다. 
+
+### bcrypt와 원래 비밀번호 체크 
+```javascript
+const result = bcrypt.compare('비밀번호','해시된 비밀번호');
+```
