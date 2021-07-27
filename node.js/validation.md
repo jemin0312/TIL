@@ -73,3 +73,20 @@ router.post('/',
   body('age').isLength({max : 2}),
 ```
  - trim() : 공백이 있다면 공백을 모두 제거해준다. 
+
+### 주의할 점 
+
+```javascript
+const validateTweet = [body('text').trim().isLength({max : 3}), validate]
+// 이 상태로 그냥 npm start하면 body가 정의되지 않았다고 뜬다. 
+```
+에러 메세지 
+```shell
+ReferenceError: body is not defined
+    at file:///C:/Users/jemin/dwitter/server/router/tweets.js:10:23
+```
+- 해결법 
+```javascript
+import {body} from 'express-validator'  
+``` 
+body를 꼭 수동으로 import 해줘야 한다!! 
