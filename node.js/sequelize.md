@@ -71,6 +71,15 @@ module.exports = class User extends Sequelize.Model {
     }
     
     );
+```
+    
+### index.js에 모델 추가 
+    ```javascript
+    const User = require('./user')
+    db.User = User; 
+    User.init(sequelize);
+    ```
+    
   }
 }
-```
+
