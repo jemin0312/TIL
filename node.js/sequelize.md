@@ -120,3 +120,10 @@ app.post('/', async (req,res,next) => {
 })
 ```
 
+### 연관관계 기본 형식 
+```javascript
+static associate(db) {
+    db.User.hasMany(db.Comment, { foreignKey: 'commenter', sourceKey: 'id' });
+  }
+```
+
