@@ -83,3 +83,40 @@ module.exports = class User extends Sequelize.Model {
   }
 }
 
+### 시퀄라이즈 기본 쿼리법 
+```javascript
+app.get('/', async (req,res,next) => {
+  
+  try
+  {
+      const users = await User.findAll({
+        attributes : ['name'],
+        where : {age : 24}
+      })
+      res.json(users);
+  }
+  catch(error)
+  {
+    next(error)
+  }
+})
+
+app.post('/', async (req,res,next) => {
+   
+  try{
+    const users = await User.create({
+      name : req.body.name,
+      age : req.body.age
+    })
+ 
+    res.json(users);
+  }
+  catch(error)
+  {
+    console.error(error)
+    next(error);
+  }
+   
+})
+```
+
