@@ -57,3 +57,19 @@ mongoose.connection.on('disconnected', () =>
 
 module.exports = connect;
 ```
+### 스키마 작성법 
+```javascript
+const mongoose = require('mongoose')
+
+const {Schema} = mongoose;
+
+const userSchema = new Schema({
+  name : {
+    type : String,
+    required : true,
+    unique : true
+  }
+})
+
+module.exports = mongoose.model('User',userSchema);
+```
