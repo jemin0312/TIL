@@ -70,3 +70,20 @@ module.exports = { User }
 ```javascript
 const {User} = require('./models/User')
 ```
+```javascript
+{
+    "commenter": {
+        "_id": "612cd4e39e7d955dc679efad",
+        "name": "jemine",
+        "age": 25,
+        "married": false,
+        "created_At": "2021-08-30T12:53:55.962Z",
+        "__v": 0
+    },
+    "comment": "안녕하세여",
+    "_id": "612cd5449e7d955dc679efaf",
+    "createAt": "2021-08-30T12:55:32.756Z",
+    "__v": 0
+}
+ cconst result = await Comment.populate(comments, {path : 'commenter'})
+```
