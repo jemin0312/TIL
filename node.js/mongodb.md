@@ -71,6 +71,7 @@ module.exports = { User }
 const {User} = require('./models/User')
 ```
 ```javascript
+// commenter가 있는 쪽에서 묶어서 검색
 {
     "commenter": {
         "_id": "612cd4e39e7d955dc679efad",
@@ -86,4 +87,24 @@ const {User} = require('./models/User')
     "__v": 0
 }
  cconst result = await Comment.populate(comments, {path : 'commenter'})
+ 
+ // commenter가 없는 쪽에서 묶어서 검색 
+ const comments = await Comment.find({commenter : req.params.id}).populate('commenter')
+ 
+ [
+    {
+        "_id": "612cd5449e7d955dc679efaf",
+        "commenter": {
+            "_id": "612cd4e39e7d955dc679efad",
+            "name": "jemine",
+            "age": 25,
+            "married": false,
+            "created_At": "2021-08-30T12:53:55.962Z",
+            "__v": 0
+        },
+        "comment": "안녕하세여",
+        "createAt": "2021-08-30T12:55:32.756Z",
+        "__v": 0
+    }
+]
 ```
