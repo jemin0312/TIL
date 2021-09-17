@@ -43,7 +43,15 @@ class GetApi(Resource):
     def get(self):
         data = requests.get("http://localhost:5001/data").json()  # 이 방식으로 다른 서버에서 요청을 받아올수 있다.
         return data;
-
+       
+   # NUGU 스피커 쪽에서 보내주는 POST 요청을 처리하는 로직      
+    class Getparams(Resource):
+    def post(self):
+        data = request.get_json()
+        print(data)
+   # NUGU 스피커 쪽에 줘야하는 response 양식 수정후 이 방식으로 다시 보내주면 된다.      
+    return jsonify(response)
+        
 
 api.add_resource(GetApi,'/')
 
