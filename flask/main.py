@@ -3,8 +3,8 @@ from flask_restful import Resource, Api
 import json    # 이게 있어야 json화 가능하다.
 import urllib.request
 import requests
-client_id = "ObPbDdRqHkZOWzsTKKh2"
-client_secret = "21QvWSx6rZ"
+client_id = "시크릿아이디"
+client_secret = "시크릿키"
 
 
 def searchFunction():
