@@ -23,7 +23,6 @@ exports.isNotLoggedIn = (req,res,next) => {
   }
   else
   {
-    
     return res.json({message : '로그인을 해제해야 합니다'})
   }
 }
