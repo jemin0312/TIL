@@ -11,7 +11,7 @@ module.exports = () => {
   },
   async (email, password, done) => {
   
-    // 로그인할때 뭐가 필요할까? 
+   
     try
     {
       const exUser = await User.findOne({where : {email}})
