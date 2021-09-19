@@ -44,7 +44,7 @@ router.post('/login', isNotLoggedIn, async (req,res,next) => {
     
        if(!user)
        {
-         return res.json({message : '유저가 없습니다'})  // 나머지를 리다이렉트 하면서 표시 
+         return res.json({message : '유저가 없습니다'})
        }
        
       return req.logIn(user,(loginError) => {  // serialize로 넘어감 => session에 id만 저장 
