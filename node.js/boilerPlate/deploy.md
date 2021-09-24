@@ -45,3 +45,6 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '내 비�
 npx sequelize db:create --env production
 
 sudo npm start && sudo npx pm2 monit 
+
+// pull 안될때 사용하는 방법
+# git stash && git pull origin master && git stash pop
