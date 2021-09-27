@@ -19,12 +19,13 @@ else
 
 ### lightsail 배포하는 법 
 ✔ 배포하는 법 
-sudo su     // 관리자 계정으로 전환
-sudo apt-get update
-sudo apt-get -t build-essiontial
-sudo apt-get install curl
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash --
-sudo apt-get install -y nodejs
+- sudo su     // 관리자 계정으로 전환
+- sudo apt-get update
+
+- sudo apt-get -t build-essential
+- sudo apt-get install curl
+- curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash --
+- sudo apt-get install -y nodejs
 
 remove anonymous users 부터해서 
 y n y y 
