@@ -22,7 +22,7 @@ else
 - sudo su     // 관리자 계정으로 전환
 - sudo apt-get update
 
-- sudo apt-get -y build-essential
+- sudo apt-get install -y build-essential
 - sudo apt-get install curl
 - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash --
 - sudo apt-get install -y nodejs
