@@ -1,0 +1,25 @@
+```shell
+{
+  "name": "type_express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node dist/app.js",
+    "dev" : "nodemon src/app.ts",
+     "build" : "tsc -p ."},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.10.1",
+    "nodemon": "^2.0.13"
+  }
+}
+
+```
