@@ -17,7 +17,7 @@ else
 ```
 
 
-### lightsail 배포하는 법 
+### 🔥 lightsail 배포하는 법 
 ✔ 배포하는 법 
 - sudo su     // 관리자 계정으로 전환
 - sudo apt-get update
@@ -48,7 +48,7 @@ npx sequelize db:create --env production
 
 sudo npm start && sudo npx pm2 monit 
 
-### NGINX 설정
+### 🎈 NGINX 설정
 - sudo apt-get update && sudo apt-get install nginx
 - nginx 실행 안되면 sudo service nginx start로 확인 
 - /etc/nginx: 해당 디렉터리는 Nginx를 설정하는 디렉터리입니다.모든 설정을 이 디렉터리 안에서 합니다.
@@ -78,7 +78,7 @@ server{
 // pull 안될때 사용하는 방법
 # git stash && git pull origin master && git stash pop
 
-### EC2에 Postgresql 설치하고 사용
+###  🧨 EC2에 Postgresql 설치하고 사용
 ```shell
 /// postgresql 설치
 sudo apt-get install postgresql postgresql-contrib
@@ -87,10 +87,13 @@ sudo apt-get install postgresql postgresql-contrib
 sudo vi /etc/postgresql/10/main/postgresql.conf
 
 // CONNECTIONS AND AUTHENTICATION의 listen_address = '*'으로 변경 
+sudo su - postgres
 
-sudo vi /etc/postgresql/10/main/pg_hba.conf
+psql -U postgres    
 
-// IPv4 local connections 0.0.0.0/0 trust , IPv6 trust 변경 
+// 중요! 반드시 내가 .env에 설정한 것과 같아야한다.
+alter user postgres password '원하는 비밀번호';
+
 
 // 재시작
 sudo service postgresql restart
