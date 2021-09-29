@@ -32,6 +32,7 @@ y n y y
 
 mysql -uroot -p  // 비밀번호 설정 나오면 로컬이랑 같도록!
 
+
 https://github.com/jemlog/book_review_backend.git
 
 폴더 들어가서 vim .env로 작성 
@@ -76,3 +77,22 @@ server{
 
 // pull 안될때 사용하는 방법
 # git stash && git pull origin master && git stash pop
+
+### EC2에 Postgresql 설치하고 사용
+```shell
+/// postgresql 설치
+sudo apt-get install postgresql postgresql-contrib
+
+// 설정 파일 변경 
+sudo vi /etc/postgresql/10/main/postgresql.conf
+
+// CONNECTIONS AND AUTHENTICATION의 listen_address = '*'으로 변경 
+
+sudo vi /etc/postgresql/10/main/pg_hba.conf
+
+// IPv4 local connections 0.0.0.0/0 trust , IPv6 trust 변경 
+
+// 재시작
+sudo service postgresql restart
+
+```
