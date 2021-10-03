@@ -24,7 +24,7 @@ else
 
 - sudo apt-get install -y build-essential
 - sudo apt-get install curl
-- curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash --
+- curl -fesL https://deb.nodesource.com/setup_16.x | sudo -E bash --   // 최근 작은 프로젝트 EC2에 올리면 node 10 버전 이후로는 인식안되는 라이브러리가 많다. 
 - sudo apt-get install -y nodejs
 
 remove anonymous users 부터해서 
