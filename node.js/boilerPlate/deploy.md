@@ -17,16 +17,57 @@ else
 ```
 
 
-### 🔥 lightsail 배포하는 법 
+### AWS 배포 방법 
 ✔ 배포하는 법 
-- sudo su     // 관리자 계정으로 전환
-- sudo apt-get update
+```typescript
+- sudo su     // 관리자 계정으로 전환, 경험상 꼭 필요하지는 않아보인다 
+- sudo apt-get update  // 우분투의 시스템을 최신으로 업데이트 시켜주는 단계 
+- sudo apt-get install -y build-essential  // nodejs를 설치하기전에 기본적으로 세팅해야 하는 것들 
+- sudo apt-get install curl   
 
-- sudo apt-get install -y build-essential
-- sudo apt-get install curl
-- curl -fesL https://deb.nodesource.com/setup_16.x | sudo -E bash --   // 최근 작은 프로젝트 EC2에 올리면 node 10 버전 이후로는 인식안되는 라이브러리가 많다. 
+// 최근 경험상 우분투 18. 버전에서는 node 8버전이 깔리고 
+   우분투 20. 버전에서는 가장 최신 node를 다운받으면 10버전이 깔린다 
+   타입스크립트로 전환 후 라이브러리들 설치가 많아져서 8버전의 노드로는 
+   활성화 시킬수 없는 것들이 매우 많다. 
+   ✅ 'nodesource'사이트 들어가서 무조건 16. 버전 이상으로 받자 
+- curl -fesL https://deb.nodesource.com/setup_16.x | sudo -E bash -- 
 - sudo apt-get install -y nodejs
+- 중요!! pm2는 꼭 sudo로 전역 설치를 해주자..! 
+```
 
+
+### 🐘 EC2에 Postgresql 설치하고 사용
+```typescript
+/// postgresql 설치
+sudo apt-get install postgresql postgresql-contrib  // postgresql-contrib는 postgresql을 위한 확장판 
+
+// 제일 처음 생성된 유저의 비밀번호를 내 DB (.env) 비밀번호랑 매칭 시켜주기 
+sudo passwd postgres
+
+// postgres 접속 
+sudo su postgres
+
+// 설정 파일 변경 
+sudo vi /etc/postgresql/12/main/postgresql.conf
+=> listen_addresses를 0.0.0.0 으로 변경해주자 , 모두가 접속 가능하다는 뜻이다 
+
+// 설정 파일 변경2
+sudo vi /etc/postgresql/12/main/pg_hba.conf
+=> IPv4 local connection에서 127.0.0.1/32 잡혀있는걸 0.0.0.0/0 으로 변경 
+
+// CONNECTIONS AND AUTHENTICATION의 listen_address = '*'으로 변경 
+sudo su - postgres
+
+psql -U postgres    
+
+// 중요! 반드시 내가 .env에 설정한 것과 같아야한다.
+alter user postgres password '원하는 비밀번호';
+
+
+// 재시작
+sudo service postgresql restart  || sudo systemctl restart postgresql
+
+```
 remove anonymous users 부터해서 
 y n y y 
 
@@ -78,24 +119,3 @@ server{
 // pull 안될때 사용하는 방법
 # git stash && git pull origin master && git stash pop
 
-###  🧨 EC2에 Postgresql 설치하고 사용
-```shell
-/// postgresql 설치
-sudo apt-get install postgresql postgresql-contrib
-
-// 설정 파일 변경 
-sudo vi /etc/postgresql/10/main/postgresql.conf
-
-// CONNECTIONS AND AUTHENTICATION의 listen_address = '*'으로 변경 
-sudo su - postgres
-
-psql -U postgres    
-
-// 중요! 반드시 내가 .env에 설정한 것과 같아야한다.
-alter user postgres password '원하는 비밀번호';
-
-
-// 재시작
-sudo service postgresql restart
-
-```
