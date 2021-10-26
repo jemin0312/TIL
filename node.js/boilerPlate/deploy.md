@@ -89,6 +89,14 @@ npx sequelize db:create --env production
 
 sudo npm start && sudo npx pm2 monit 
 
+### 🐳 Docker mysql 실행 
+- docker run -d -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=true --name mysql mysql:5.7
+- ❗ 만약 문제가 생긴다면 꼭 -d 옵션을 때고 실행해보자 
+- docker exec -it mysql mysql 
+- create database 원하는 이름 CHARACTER SET utf8;
+- grant all privileges on 원하는이름.* to 원하는이름@'%' identified by '원하는이름';
+- flush privileges;
+- quit
 ### 🎈 NGINX 설정
 - sudo apt-get update && sudo apt-get install nginx
 - nginx 실행 안되면 sudo service nginx start로 확인 
